@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MAK Job Portal</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="click-closed"></div>
+  <div class="box-collapse">
+    <div class="title-box-d">
+      <h3 class="title-d">Find Your Perfect Job</h3>
+    </div>
+    <span class="close-box-collapse right-boxed bi bi-x"></span>
+    <div class="box-collapse-wrap form">
+
+      <center>
+        <div class="arama">
+          <script>
+          </script>
+          <link rel="stylesheet"
+            href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+          <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+          <form action="https://dylan.global/search/" id="autocomplete" name="theForm">
+            <div class="ui-widget">
+              <form action="?" id="myForm" class="searchbox sbx-custom">
+                <div role="search" class="sbx-twitter__wrapper">
+                  <input type="search" id="dylan2" placeholder="Google Search" autocomplete="off" name="q"
+                    required="required" class="sbx-custom__input searchbox"
+                    style="height: 46px; margin-bottom: 60px !IMPORTANT; width: 750px;">
+                  <button type="submit" title="Google Search" class="sbx-custom__submit">
+                  </button>
+                  <button type="reset" title="Clear the search query." class="sbx-custom__reset">
+                    <svg role="img" aria-label="Reset">
+                      <use xlink:href="#sbx-icon-clear-3"></use>
+                    </svg>
+                  </button>
+                  <h1></h1>
+                  <button class="mdc-button mdc-button--outlined" style="font-size: 18px;">Search</button>
+                </div>
+                <script>
+                  $(".searchbox").autocomplete({
+                    source: function (request, response) {
+                      $.ajax({
+
+                        url: "https://en.wikipedia.org/w/api.php",
+                        dataType: "jsonp",
+                        data: {
+                          'action': "opensearch",
+                          'format': "json",
+                          'search': request.term
+                        },
+                        success: function (data) {
+                          response(data[1]);
+                        }
+                      });
+                    }
+                  });
+                </script>
+              </form>
+            </div>
+        </div>
+
+    </div>
+    <div id="sonuc"></div>
+
+  </div>
+  
+
+
+
+
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="navbar-brand text-brand" href="index.html">MAK<span class="color-b">Jobs</span></a>
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="#">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="#">services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+
+      <button type="button" class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01">
+        <i class="bi bi-search"></i>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <div class="intro intro-carousel swiper position-relative">
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(assets/img/img1.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 class="intro-title mb-4 ">
+                      <span class="color-b"> Discover </span> your dream career
+                      <br> at your fingertips
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(assets/img/img2.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 class="intro-title mb-4">
+                      <span class="color-b">Empowering </span> job
+                      <br> seekers to reach new heights
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(assets/img/img3.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 class="intro-title mb-4">
+                      <span class="color-b">Transforming </span> job
+                      <br> hunting into a seamless experience
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <main id="main">
+
+
+    <section class="section-services section-t8">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a">Our Services</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card-box-c foo">
+              <div class="card-header-c d-flex">
+                <div class="card-box-ico">
+                  <span class="bi bi-search"></span>
+                </div>
+                <div class="card-title-c align-self-center">
+                  <h2 class="title-c">Search</h2>
+                </div>
+              </div>
+              <div class="card-body-c">
+                <p class="content-c">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minus facere non iste, aspernatur
+                  adipisci aliquid molestiae quaerat odit quisquam dolorum maiores voluptatum tenetur? Nihil.
+                </p>
+              </div>
+              <div class="card-footer-c">
+                <a href="#" class="link-c link-icon">Read more
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-box-c foo">
+              <div class="card-header-c d-flex">
+                <div class="card-box-ico">
+                  <span class="bi bi-check2-square"></span>
+                </div>
+                <div class="card-title-c align-self-center">
+                  <h2 class="title-c">Apply</h2>
+                </div>
+              </div>
+              <div class="card-body-c">
+                <p class="content-c">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quia deleniti magnam libero cupiditate.
+                  Quos autem molestias molestiae enim illum consequuntur officia saepe tempore hic?
+                </p>
+              </div>
+              <div class="card-footer-c">
+                <a href="#" class="link-c link-icon">Read more
+                  <span></span>></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-box-c foo">
+              <div class="card-header-c d-flex">
+                <div class="card-box-ico">
+                  <span class="bi bi-card-checklist"></span>
+                </div>
+                <div class="card-title-c align-self-center">
+                  <h2 class="title-c">Select</h2>
+                </div>
+              </div>
+              <div class="card-body-c">
+                <p class="content-c">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam saepe dolores facere, consequuntur
+                  explicabo tempora impedit voluptatem reiciendis, voluptates modi labore architecto blanditiis neque
+                  vel.
+                </p>
+              </div>
+              <div class="card-footer-c">
+                <a href="#" class="link-c link-icon">Read more
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <main id="main">
+
+
+      <section class="intro-single">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <div class="title-single-box">
+                <h1 class="title-single">We Help You to Find the perfect job that matches your passion</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 position-relative">
+              <div class="about-img-box">
+                <img src="assets/img/about1.jpg" alt="" class="img-fluid">
+              </div>
+
+            </div>
+            <div class="col-md-12 section-t8 position-relative">
+              <div class="row">
+                <div class="col-md-6 col-lg-5">
+                  <img src="assets/img/about2.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-2  d-none d-lg-block position-relative">
+
+                </div>
+                <div class="col-md-6 col-lg-5 section-md-t3">
+
+                  <p class="color-text-a">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores amet quibusdam, tempore autem
+                    voluptates molestias consequuntur nobis laborum neque consequatur perspiciatis asperiores ipsum
+                    doloribus corporis laudantium tempora dignissimos, modi quidem, ullam quaerat eligendi atque cumque
+                    veritatis molestiae. Dicta, officia unde.
+                  </p>
+                  <p class="color-text-a">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam laboriosam blanditiis cum officiis
+                    eveniet dicta dignissimos quidem natus, quaerat distinctio odio, quis unde ipsum atque quam, quod
+                    rem eligendi alias repudiandae dolor? Nesciunt modi, voluptatum temporibus saepe rem impedit
+                    molestias dolores, possimus dicta, neque libero consequatur ducimus officia nihil!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section-agents section-t8">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="title-wrap d-flex justify-content-between">
+                <div class="title-box">
+                  <h2 class="title-a">Meet Our Team</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card-box-d">
+                <div class="card-img-d">
+                  <img src="assets/img/team1.jpg" alt="" class="img-d img-fluid">
+                </div>
+                <div class="card-overlay card-overlay-hover">
+                  <div class="card-header-d">
+                    <div class="card-title-d align-self-center">
+                      <h3 class="title-d">
+                        <a href="agent-single.html" class="link-two">Team - 1
+                          <br> USA</a>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="card-body-d">
+                    <p class="content-d color-text-a">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deleniti dolores officiis.
+                    </p>
+                    <div class="info-agents color-a">
+                      <p>
+                        <strong>Phone: </strong> +1 48629721
+                      </p>
+                      <p>
+                        <strong>Email: </strong> contact@mak.in
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-footer-d">
+                    <div class="socials-footer d-flex justify-content-center">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-box-d">
+                <div class="card-img-d">
+                  <img src="assets/img/team2.jpg" alt="" class="img-d img-fluid">
+                </div>
+                <div class="card-overlay card-overlay-hover">
+                  <div class="card-header-d">
+                    <div class="card-title-d align-self-center">
+                      <h3 class="title-d">
+                        <a href="agent-single.html" class="link-two">Team - 2
+                          <br> UK</a>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="card-body-d">
+                    <p class="content-d color-text-a">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sapiente ad nisi!
+                    </p>
+                    <div class="info-agents color-a">
+                      <p>
+                        <strong>Phone: </strong> +54 356 945234
+                      </p>
+                      <p>
+                        <strong>Email: </strong> contact@mak.com
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-footer-d">
+                    <div class="socials-footer d-flex justify-content-center">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-dribbble" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-box-d">
+                <div class="card-img-d">
+                  <img src="assets/img/team-3.jpg" alt="" class="img-d img-fluid">
+                </div>
+                <div class="card-overlay card-overlay-hover">
+                  <div class="card-header-d">
+                    <div class="card-title-d align-self-center">
+                      <h3 class="title-d">
+                        <a href="agent-single.html" class="link-two">Team - 3
+                          <br> Australia</a>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="card-body-d">
+                    <p class="content-d color-text-a">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquam incidunt saepe.
+                    </p>
+                    <div class="info-agents color-a">
+                      <p>
+                        <strong>Phone: </strong> +54 356 945234
+                      </p>
+                      <p>
+                        <strong>Email: </strong> info@mak.com
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-footer-d">
+                    <div class="socials-footer d-flex justify-content-center">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#" class="link-one">
+                            <i class="bi bi-dribbble" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+
+  </main>
+
+
+  <section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">MAK Jobs</h3>
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dignissimos numquam voluptatem quod,
+                aut labore!
+              </p>
+            </div>
+            <div class="w-footer-a">
+              <ul class="list-unstyled">
+                <li class="color-a">
+                  <span class="color-text-a">Phone .</span>+91-9550902859
+                </li>
+                <li class="color-a">
+                  <span class="color-text-a">Email .</span>abdulkhadeerkhadeer187@gmail.com
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">The Company</h3>
+            </div>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Advanced Search Filters</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Personalized Job Recommendations</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Company Profiles and Reviews</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Easy Application Process</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Job Alerts and Notifications</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Call-to-Action</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">Our Collabration</h3>
+            </div>
+            <div class="w-body-a">
+              <ul class="list-unstyled">
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Accenture</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Google</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Facebook</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Wipro</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Infosys</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Deloitte</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="nav-footer">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Services</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              &copy; Copyright
+              <span class="color-a">MAK Jobs</span> All Rights Reserved.
+            </p>
+          </div>
+          <div class="credits">
+            Designed & Developed by <a href="#">Abdul Khadeer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
